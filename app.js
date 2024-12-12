@@ -4,7 +4,7 @@ gsap.registerPlugin(ScrollTrigger)
 //.line-one 
 const lineOneTl = gsap.timeline({
     scrollTrigger: {
-        trigger: 'line-one',
+        trigger: '.line-one',
         start: 'top top',
         end: '+=500',
         pin: true,
@@ -17,10 +17,25 @@ const lineOneTl = gsap.timeline({
 //selecting span elements
 const spans = document.querySelectorAll('.line-one span');
 
-lineOneTl.from(spans, {
+lineOneTl.
+from(spans, {
     y: '25vh',
     ease: 'none',
     duration: 1,
     opacity: 0,
     stagger: 0.2,
-});
+})
+//yellow background
+.to('.line-one', {
+    backgroundColor: 'yellow',
+    duration: 1,
+})
+//sun
+.fromTo('.sun', {
+    x: '15vw',
+    duration: 1,
+}, {
+    x : '-5vw',
+    duration: 1,
+}    
+);
