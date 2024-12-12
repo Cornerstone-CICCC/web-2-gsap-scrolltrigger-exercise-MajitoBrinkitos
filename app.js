@@ -59,8 +59,6 @@ const lineTwoTl = gsap.timeline({
         trigger: '.line-two',
         start: "+=200",
         markers: true,
-        pin: true,
-        yoyo: true,
         toggleActions: 'restart pause resume none',
     }
 });
@@ -72,7 +70,7 @@ lineTwoTl
 .from(spansOR, {
     duration: 1,
     scale: 5,
-    ease: "expo.in"
+    ease: "expo.out"
 })
 //
 .to(spansOR, {
