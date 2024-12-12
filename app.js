@@ -6,7 +6,7 @@ const lineOneTl = gsap.timeline({
     scrollTrigger: {
         trigger: '.line-one',
         start: 'top top',
-        end: '+=500',
+        end: '+=200',
         pin: true,
         yoyo: true,
         markers: true,
@@ -51,5 +51,33 @@ from(spans, {
     duration: 1,
 }, {
     x: '100vw',
+});
+
+//.line-two
+const lineTwoTl = gsap.timeline({
+    scrollTrigger: {
+        trigger: '.line-two',
+        start: "+=200",
+        markers: true,
+        pin: true,
+        yoyo: true,
+        toggleActions: 'restart pause resume none',
+    }
+});
+
+//selecting span elements
+const spansOR = document.querySelectorAll('.line-two span');
+
+lineTwoTl
+.from(spansOR, {
+    duration: 1,
+    scale: 5,
+    ease: "expo.in"
 })
-;
+//
+.to(spansOR, {
+    y: -30,
+    duration: 1,
+    ease: "bounce.out",
+    stagger: 0.2
+});
