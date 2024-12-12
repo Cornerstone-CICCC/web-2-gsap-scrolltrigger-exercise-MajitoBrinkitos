@@ -37,5 +37,19 @@ from(spans, {
 }, {
     x : '-5vw',
     duration: 1,
-}    
-);
+})
+//moving sun outside
+.fromTo('.sun', {
+    x: '-5vw',
+    duration: 2,
+}, {
+    x : '-100vw',
+}, "+=1")
+//moving spans outside
+.fromTo(spans, {
+    x: '25vw',
+    duration: 1,
+}, {
+    x: '100vw',
+})
+;
